@@ -1,2 +1,3 @@
 me.richardpanman.pluginplay.services.ExternalReportService
 me.richardpanman.pluginplay.services.SimpleReportService
+me.richardpanman.pluginplay.services.ConfigReportService

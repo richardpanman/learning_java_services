@@ -1,5 +1,6 @@
 package me.richardpanman.pluginplay.services;
 
+/**An interface on which reports must be based. */
 public interface ReportService {
-  public String getString();
+    String getString();
 }

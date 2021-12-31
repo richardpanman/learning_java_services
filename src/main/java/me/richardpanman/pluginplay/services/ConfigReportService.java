@@ -1,28 +1,20 @@
 package me.richardpanman.pluginplay.services;
 
-import org.yaml.snakeyaml.Yaml;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.Map;
 
 /** ReportServiceB which doesn't use an external service. */
 public class ConfigReportService implements ReportService {
     @Override
     public String getString() {
-        Yaml yaml = new Yaml();
-        InputStream inputStream;
-        Map<String, Object> config;
+        Configurations configs = new Configurations();
         try {
-            inputStream = new FileInputStream(new File("config.yaml"));
-            config = yaml.load(inputStream);
-            return (String) config.get("reportString");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(0);
+            PropertiesConfiguration config = configs.properties(new File("user.properties"));
+            return config.getString("reportString");
+        } catch (Exception e) {
+            return null;
         }
-        return "";
     }
 }

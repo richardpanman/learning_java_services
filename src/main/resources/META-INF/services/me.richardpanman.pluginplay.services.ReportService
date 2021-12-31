@@ -1,2 +1,2 @@
-me.richardpanman.pluginplay.services.ReportServiceA
-me.richardpanman.pluginplay.services.ReportServiceB
+me.richardpanman.pluginplay.services.ExternalReportService
+me.richardpanman.pluginplay.services.SimpleReportService

@@ -1,19 +1,21 @@
 package me.richardpanman.pluginplay;
 
-import java.util.Iterator;
-import java.util.ServiceLoader;
 import me.richardpanman.pluginplay.services.ReportService;
 
-/**
- * The main class for this Application - run this.
- */
+import java.util.Iterator;
+import java.util.ServiceLoader;
+
+/** The main class for this Application - run this. */
 public final class App {
     private App() {}
 
-    /**
-     * Print the string for all report instances.
-     */
+    /** Print the string for all report instances. */
     public static void main(String[] args) {
+        getReports();
+    }
+
+    /** Get the string for all reports. */
+    public static void getReports() {
         ServiceLoader<ReportService> loader = ServiceLoader.load(ReportService.class);
         Iterator<ReportService> iter = loader.iterator();
         while (iter.hasNext()) {

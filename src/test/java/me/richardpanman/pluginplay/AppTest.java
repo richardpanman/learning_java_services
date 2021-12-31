@@ -17,9 +17,12 @@ class AppTest {
         System.setOut(new PrintStream(out));
         App.getReports();
         assertEquals(
-                "Report Service with External Interface\n"
-                        + "SimpleReportService\n"
-                        + "ConfigReportService\n",
+                "Report Service with External Interface"
+                        + System.lineSeparator()
+                        + "SimpleReportService"
+                        + System.lineSeparator()
+                        + "ConfigReportService"
+                        + System.lineSeparator(),
                 out.toString());
         System.setOut(originalOut);
     }

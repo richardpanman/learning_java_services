@@ -13,4 +13,4 @@ repos:
     rev: v2.2.0
     hooks:
       - id: pretty-format-java
-        args: [--autofix]
+        args: [--autofix, --indent, '4']
